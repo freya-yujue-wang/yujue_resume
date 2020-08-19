@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.background-color-blue {
+  background-color: #9cf3e0 !important;
+}
+
+.font-color-blue {
+  color: #9cf3e0;
+}
+
+.full-size {
+  height: 100vh;
+  width: 100%;
+  border: 1px solid black;
+}
