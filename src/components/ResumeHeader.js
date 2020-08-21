@@ -7,6 +7,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import "./ResumeHeader.css";
 import { Snackbar } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
+import ReactGA from "react-ga";
 
 //React 16.8 React hook
 export default function ResumeHeader() {
@@ -58,6 +59,10 @@ export default function ResumeHeader() {
   );
 
   function handleEmailClick(content) {
+    ReactGA.event({
+      category: "user",
+      action: "Email button clicked",
+    });
     navigator.clipboard.writeText(content).then(() => {
       setOpenSnackBar(true);
       setSnackbarMessage(`Sucessfuuly copied "${content}" to clipboard!`);
@@ -69,6 +74,10 @@ export default function ResumeHeader() {
   }
 
   function handleGitHubClick(link) {
+    ReactGA.event({
+      category: "user",
+      action: "Github button clicked",
+    });
     window.open(link);
   }
 }
